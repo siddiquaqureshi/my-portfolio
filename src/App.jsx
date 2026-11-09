@@ -1,122 +1,118 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+const projects = [
+  {
+    title: 'Design-Your-Cake',
+    text: 'Full-stack web app where customers design and order custom cakes.',
+    alt: 'Illustration representing the Design-Your-Cake web application',
+  },
+  {
+    title: 'Directory Backup Tool',
+    text: 'Bash-based multi-level directory backup and restore tool built for my Operating Systems course.',
+    alt: 'Illustration representing the directory backup tool',
+  },
+  {
+    title: 'Telco Churn Prediction',
+    text: 'Machine learning lab using an SVM to predict customer churn.',
+    alt: 'Illustration representing the churn prediction project',
+  },
+]
 
-function App() {
-  const [count, setCount] = useState(0)
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Git & GitHub', 'Bash']
 
+export default function App() {
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <header className="site-header">
+        <div className="container header-inner">
+          <a href="#home" className="logo">Siddiqua</a>
+          <nav aria-label="Main navigation">
+            <ul className="nav-list">
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </header>
 
-      <div className="ticks"></div>
+      <main id="home">
+        <section className="hero">
+          <div className="container hero-inner">
+            <img
+              src="/profile.svg"
+              alt="Avatar illustration of Siddiqua"
+              className="avatar"
+              width="180"
+              height="180"
+            />
+            <div>
+              <h1>Hi, I&apos;m Siddiqua</h1>
+              <p className="lead">
+                Computer Science student and aspiring web developer building
+                clean, responsive websites with React.
+              </p>
+              <a className="btn" href="#projects">View my work</a>
+            </div>
+          </div>
+        </section>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
+        <section id="about" className="section">
+          <div className="container">
+            <h2>About me</h2>
+            <p>
+              I am a BS Computer Science student at Sukkur IBA University. I
+              enjoy turning ideas into working web apps and I am learning
+              something new with every project I build.
+            </p>
+          </div>
+        </section>
+
+        <section id="projects" className="section alt">
+          <div className="container">
+            <h2>Projects</h2>
+            <div className="grid">
+              {projects.map((p) => (
+                <article className="card" key={p.title}>
+                  <img src="/project.svg" alt={p.alt} width="400" height="220" />
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="section">
+          <div className="container">
+            <h2>Skills</h2>
+            <ul className="skills">
+              {skills.map((s) => (
+                <li key={s}>{s}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section id="contact" className="section alt">
+          <div className="container">
+            <h2>Contact</h2>
+            <p>Want to work together or just say hello? Reach out:</p>
+            <p>
+              <a href="mailto:siddiquaqureshi41@gmail.com">YOUR_EMAIL</a>
+              {' · '}
+              <a href="https://github.com/siddiquaqureshi" target="_blank" rel="noreferrer">
                 GitHub
               </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+            </p>
+          </div>
+        </section>
+      </main>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <footer className="site-footer">
+        <div className="container">
+          <p>&copy; {new Date().getFullYear()} Siddiqua. Built with React.</p>
+        </div>
+      </footer>
     </>
   )
 }
-
-export default App
