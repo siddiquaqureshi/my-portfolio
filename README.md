@@ -1,16 +1,23 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive personal portfolio homepage built with React and Vite.
 
-Currently, two official plugins are available:
+## Live URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://my-portfolio-ten-omega-c45sc24myo.vercel.app
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Semantic HTML: header, nav, main, footer
+- Sections: hero, about, projects, skills, contact
+- Responsive layout (mobile first)
+- Images with alt text
 
-## Expanding the Oxlint configuration
+## Run locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+    npm install
+    npm run dev
+
+## Deployment
+
+Hosted on Vercel. Every push to `main` deploys to production automatically.
